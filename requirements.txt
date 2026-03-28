@@ -1,0 +1,12 @@
+# HorseClaw Dependencies
+# Python 3.8+
+
+# Core
+python-dateutil>=2.8.2
+
+# Testing
+pytest>=7.0.0
+pytest-cov>=3.0.0
+
+# Optional - for logging
+structlog>=22.0.0
