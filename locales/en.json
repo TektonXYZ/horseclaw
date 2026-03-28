@@ -1,0 +1,44 @@
+{
+  "app": {
+    "name": "HorseClaw",
+    "description": "AI Token Budget Management System",
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "error": "Error"
+    }
+  },
+  "modules": {
+    "fee_collector": "Fee Collector",
+    "token_converter": "Token Converter",
+    "allocation_engine": "Allocation Engine",
+    "agent_registry": "Agent Registry",
+    "transaction_logger": "Transaction Logger"
+  },
+  "errors": {
+    "insufficient_funds": "Insufficient funds",
+    "agent_not_registered": "Agent not registered",
+    "invalid_request": "Invalid request",
+    "negative_balance": "Negative balance not allowed",
+    "max_allocation_exceeded": "Maximum allocation exceeded",
+    "system_error": "System error occurred"
+  },
+  "status": {
+    "approved": "Approved",
+    "partial": "Partial",
+    "rejected": "Rejected",
+    "pending": "Pending",
+    "completed": "Completed",
+    "failed": "Failed"
+  },
+  "pricing": {
+    "claude_rate": "Claude: $1 = 20,000 tokens",
+    "kimi_rate": "Kimi: $1 = 40,000 tokens"
+  },
+  "rules": {
+    "max_allocation": "Maximum 30% per request (50% for high priority)",
+    "reserve_requirement": "10% reserve always maintained",
+    "partial_allocation": "Partial allocation when insufficient",
+    "unregistered_rejection": "Unregistered agents rejected"
+  }
+}

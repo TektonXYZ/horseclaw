@@ -1,0 +1,44 @@
+{
+  "app": {
+    "name": "HorseClaw",
+    "description": "AI 代币预算管理系统",
+    "status": {
+      "active": "活跃",
+      "inactive": "非活跃",
+      "error": "错误"
+    }
+  },
+  "modules": {
+    "fee_collector": "费用收集器",
+    "token_converter": "代币转换器",
+    "allocation_engine": "分配引擎",
+    "agent_registry": "代理注册表",
+    "transaction_logger": "交易记录器"
+  },
+  "errors": {
+    "insufficient_funds": "资金不足",
+    "agent_not_registered": "代理未注册",
+    "invalid_request": "无效请求",
+    "negative_balance": "不允许负余额",
+    "max_allocation_exceeded": "超出最大分配额",
+    "system_error": "系统错误发生"
+  },
+  "status": {
+    "approved": "已批准",
+    "partial": "部分",
+    "rejected": "已拒绝",
+    "pending": "待处理",
+    "completed": "已完成",
+    "failed": "失败"
+  },
+  "pricing": {
+    "claude_rate": "Claude: $1 = 20,000 代币",
+    "kimi_rate": "Kimi: $1 = 40,000 代币"
+  },
+  "rules": {
+    "max_allocation": "每次请求最多 30% (高优先级 50%)",
+    "reserve_requirement": "始终保持 10% 储备",
+    "partial_allocation": "不足时部分分配",
+    "unregistered_rejection": "拒绝未注册代理"
+  }
+}
