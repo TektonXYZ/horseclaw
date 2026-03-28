@@ -6,6 +6,11 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Tests](https://img.shields.io/badge/Tests-35+-brightgreen.svg)](tests/)
+[![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-blue.svg)](.github/workflows/ci.yml)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![codecov](https://codecov.io/gh/TektonXYZ/horseclaw/branch/main/graph/badge.svg)](https://codecov.io/gh/TektonXYZ/horseclaw)
+
+[English](#english) | [中文](#chinese) | [Installation](#installation) | [CLI](#cli) | [API](#json-api)
 
 ---
 
@@ -145,7 +150,8 @@ horseclaw/
 │   ├── fee_collector.py         # Fee collection
 │   ├── token_converter.py       # USD → tokens
 │   ├── allocation_engine.py     # Allocation logic
-│   └── transaction_logger.py    # Audit logging
+│   ├── transaction_logger.py    # Audit logging
+│   └── config.py                # Configuration management
 ├── locales/
 │   ├── en.json                  # English strings
 │   └── zh.json                  # Chinese strings
@@ -153,9 +159,47 @@ horseclaw/
 │   └── test_horseclaw.py        # 35+ unit tests
 ├── examples/
 │   └── usage_demo.py            # Complete demos
+├── .github/workflows/           # CI/CD
+│   └── ci.yml
+├── horseclaw_cli.py             # CLI tool
+├── pyproject.toml               # Modern Python packaging
+├── Makefile                     # Dev commands
+├── CONTRIBUTING.md              # Contribution guidelines
+├── CHANGELOG.md                 # Version history
+├── SECURITY.md                  # Security policy
 ├── README.md                    # This file
 ├── LICENSE                      # MIT License
 └── requirements.txt             # Dependencies
+```
+
+### CLI Usage
+
+HorseClaw includes a command-line interface:
+
+```bash
+# Initialize
+./horseclaw_cli.py init --state-file state.json
+
+# Register agents
+./horseclaw_cli.py register my_bot "My Bot" --state-file state.json
+
+# Collect fees
+./horseclaw_cli.py collect my_bot 100.00 --state-file state.json
+
+# Convert to tokens
+./horseclaw_cli.py convert 80.00 --claude-pct 60 --kimi-pct 40
+
+# Request tokens
+./horseclaw_cli.py request my_bot claude 5000 high
+
+# Check status
+./horseclaw_cli.py status
+
+# Show pools
+./horseclaw_cli.py pools
+
+# Full report
+./horseclaw_cli.py report --json
 ```
 
 ### State Persistence
@@ -310,7 +354,8 @@ horseclaw/
 │   ├── fee_collector.py         # 费用收集
 │   ├── token_converter.py       # USD → 代币
 │   ├── allocation_engine.py     # 分配逻辑
-│   └── transaction_logger.py    # 审计日志
+│   ├── transaction_logger.py    # 审计日志
+│   └── config.py                # 配置管理
 ├── locales/
 │   ├── en.json                  # 英文字符串
 │   └── zh.json                  # 中文字符串
@@ -318,9 +363,47 @@ horseclaw/
 │   └── test_horseclaw.py        # 35+ 单元测试
 ├── examples/
 │   └── usage_demo.py            # 完整演示
+├── .github/workflows/           # CI/CD
+│   └── ci.yml
+├── horseclaw_cli.py             # CLI 工具
+├── pyproject.toml               # 现代 Python 打包
+├── Makefile                     # 开发命令
+├── CONTRIBUTING.md              # 贡献指南
+├── CHANGELOG.md                 # 版本历史
+├── SECURITY.md                  # 安全政策
 ├── README.md                    # 本文件
 ├── LICENSE                      # MIT 许可证
 └── requirements.txt             # 依赖项
+```
+
+### CLI 使用
+
+HorseClaw 包含命令行界面：
+
+```bash
+# 初始化
+./horseclaw_cli.py init --state-file state.json
+
+# 注册代理
+./horseclaw_cli.py register my_bot "My Bot" --state-file state.json
+
+# 收集费用
+./horseclaw_cli.py collect my_bot 100.00 --state-file state.json
+
+# 转换为代币
+./horseclaw_cli.py convert 80.00 --claude-pct 60 --kimi-pct 40
+
+# 请求代币
+./horseclaw_cli.py request my_bot claude 5000 high
+
+# 检查状态
+./horseclaw_cli.py status
+
+# 显示池
+./horseclaw_cli.py pools
+
+# 完整报告
+./horseclaw_cli.py report --json
 ```
 
 ### 状态持久化
@@ -356,10 +439,12 @@ horse2 = HorseClaw(state_file="/path/to/state.json")
 
 ## 📊 Statistics
 
-- **Total Lines of Code**: ~3,500+
+- **Total Lines of Code**: ~4,000+
 - **Test Coverage**: 35+ unit tests
 - **Languages**: English, 中文
-- **Modules**: 5 core + 1 main
+- **Modules**: 5 core + 1 main + config
+- **CLI Commands**: 10
+- **CI/CD**: GitHub Actions with multi-Python testing
 - **API Endpoints**: 10+ JSON actions
 
 ## 📄 License
