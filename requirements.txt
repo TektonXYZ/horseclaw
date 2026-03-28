@@ -1,12 +1,23 @@
 # HorseClaw Dependencies
-# Python 3.8+
+# HorseClaw 依赖项
 
-# Core
+# Core Dependencies - 核心依赖
 python-dateutil>=2.8.2
 
-# Testing
-pytest>=7.0.0
-pytest-cov>=3.0.0
+# Development Dependencies - 开发依赖 (install with: pip install -e ".[dev]")
+# pytest>=7.0.0
+# pytest-cov>=3.0.0
+# pytest-asyncio>=0.21.0
+# black>=23.0.0
+# flake8>=6.0.0
+# mypy>=1.0.0
+# pre-commit>=3.0.0
 
-# Optional - for logging
-structlog>=22.0.0
+# Documentation Dependencies - 文档依赖 (install with: pip install -e ".[docs]")
+# sphinx>=6.0.0
+# sphinx-rtd-theme>=1.2.0
+
+# Optional Dependencies - 可选依赖
+# structlog>=22.0.0  # Enhanced logging
+# pyyaml>=6.0.0      # YAML config support
+# click>=8.0.0       # CLI framework (alternative)
