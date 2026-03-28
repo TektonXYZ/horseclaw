@@ -14,12 +14,22 @@ from decimal import Decimal
 from pathlib import Path
 
 # Import all modules
-from .agent_registry import AgentRegistry, Agent
-from .transaction_logger import TransactionLogger, TransactionType, TransactionStatus
-from .fee_collector import FeeCollector, FeePayment
-from .token_converter import TokenConverter, TokenPool, ConversionResult
-from .allocation_engine import AllocationEngine, AllocationRequest, AllocationResponse
-from .allocation_engine import AllocationStatus, Priority
+try:
+    # Package import
+    from .agent_registry import AgentRegistry, Agent
+    from .transaction_logger import TransactionLogger, TransactionType, TransactionStatus
+    from .fee_collector import FeeCollector, FeePayment
+    from .token_converter import TokenConverter, TokenPool, ConversionResult
+    from .allocation_engine import AllocationEngine, AllocationRequest, AllocationResponse
+    from .allocation_engine import AllocationStatus, Priority
+except ImportError:
+    # Direct import
+    from agent_registry import AgentRegistry, Agent
+    from transaction_logger import TransactionLogger, TransactionType, TransactionStatus
+    from fee_collector import FeeCollector, FeePayment
+    from token_converter import TokenConverter, TokenPool, ConversionResult
+    from allocation_engine import AllocationEngine, AllocationRequest, AllocationResponse
+    from allocation_engine import AllocationStatus, Priority
 
 
 # I18n Support / 国际化支持
