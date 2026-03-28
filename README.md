@@ -70,9 +70,34 @@ horseclaw/
 └── requirements.txt
 ```
 
+### Quick Start
+
+```python
+from horseclaw import HorseClaw
+
+# Initialize
+hc = HorseClaw()
+
+# Collect fees
+hc.collect_fee("agent_name", 100.0, "USD")
+
+# Convert to tokens
+hc.convert_fees_to_tokens()
+
+# Request tokens
+result = hc.request_tokens(
+    agent_id="my_agent",
+    requested_tokens=50000,
+    model="claude",
+    priority="normal"
+)
+
+print(f"Allocated: {result.tokens_allocated} tokens")
+```
+
 ### Status
 
-🚧 **Under Construction** - Part 1 coming soon
+✅ **Part 1 Complete** - Core functionality ready
 
 ---
 
@@ -116,11 +141,22 @@ HorseClaw 是一个自主 AI 代理，负责：
 
 ## 🚀 Roadmap
 
-- [ ] Part 1: Project structure & core classes
-- [ ] Part 2: Fee collection & token conversion
-- [ ] Part 3: Allocation engine & safety rules
-- [ ] Part 4: Bilingual support & documentation
-- [ ] Part 5: Testing & examples
+- [x] Part 1: Project structure & core classes ✅ COMPLETE
+- [ ] Part 2: Fee collector & token converter modules
+- [ ] Part 3: Allocation engine & comprehensive tests
+- [ ] Part 4: Advanced bilingual support & CLI
+- [ ] Part 5: Full test suite & deployment docs
+
+### Part 1 Complete ✅
+- ✅ Agent Registry with CRUD operations
+- ✅ Transaction Logger with filtering
+- ✅ Main HorseClaw agent class
+- ✅ Fee collection system
+- ✅ Token conversion (USD → Claude/Kimi)
+- ✅ Allocation engine with safety rules
+- ✅ State persistence & recovery
+- ✅ Usage demo example
+- ✅ Bilingual locale files (EN/ZH)
 
 ---
 
